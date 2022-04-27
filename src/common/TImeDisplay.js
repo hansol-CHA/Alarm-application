@@ -7,11 +7,12 @@ import { clockTick } from "../features/clockSlice";
 import { openModal } from "../features/modalSlice";
 
 import Modal from '../common/Modal';
+import { MODAL_TYPES } from "../features/constant";
 
 export default function TimeDisplay () {
   const nowTime = useSelector(state => state.clock.currentTime);
   const alarmList = useSelector(state => state.alarm.byId);
-  const modalIsOpen = useSelector(state => state.modal.isOpen);
+  const modalIsOpen = useSelector(state => state.modal);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function TimeDisplay () {
   useEffect(() => {
     if (checkAlarmTime) {
       if (checkAlarmTime.clockMode === "야간" && checkAlarmTime.alarmMode === "일반") return;
-      dispatch(openModal())
+      dispatch(openModal(MODAL_TYPES.ALARM))
     }
   }, [dispatch, checkAlarmTime])
 
@@ -38,7 +39,7 @@ export default function TimeDisplay () {
         현재 시간
         <div>{nowTime}</div>
       </div>
-      {modalIsOpen && <Modal alarmInfo={checkAlarmTime}/>}
+      {modalIsOpen === MODAL_TYPES.ALARM && <Modal alarmInfo={checkAlarmTime}/>}
     </>
   )
 }

@@ -5,7 +5,6 @@ import { closeModal } from "../features/modalSlice";
 import { AlarmIcon, VibrateIcon } from "../icons";
 
 export default function Modal ({ alarmInfo }) {
-  console.log(alarmInfo)
   const element = document.getElementById('modal');
   const dispatch = useDispatch();
 
