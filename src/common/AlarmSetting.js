@@ -18,7 +18,6 @@ export default function AlarmSetting () {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value)
 
     setInputValue({
       ...inputValue,
