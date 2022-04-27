@@ -35,9 +35,8 @@ export default function TimeDisplay () {
 
   return (
     <>
-      <div className='nowTime'>
-        현재 시간
-        <div>{nowTime}</div>
+      <div className='time-container'>
+        <div className="nowTime">{nowTime}</div>
       </div>
       {modalIsOpen === MODAL_TYPES.ALARM && <Modal alarmInfo={checkAlarmTime}/>}
     </>

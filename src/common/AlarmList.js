@@ -15,7 +15,7 @@ export default function AlarmList ({ info }) {
   }
 
   return (
-    <div>
+    <div className="detail-container">
       <div className="alarm-detail">{`${timeFormat} ${message}`}</div>
       <button className="alarm-btn" onClick={handleAlarmToggle}>끄기</button>
       <button className="alarm-btn" onClick={handleAlarmDelete}>삭제</button>

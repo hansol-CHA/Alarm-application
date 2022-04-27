@@ -11,10 +11,11 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Alarm Clock</h2>
       <TimeDisplay />
       <AlarmSetting />
       <div className='list'>
-        <div className='lable'>알람목록</div>
+        <h3>알람목록</h3>
         {Object.values(alarmList).sort((a,b) => {
           return a.time < b.time ? -1 : a.time > b.time ? 1 : 0;
         }).map(alarm => (

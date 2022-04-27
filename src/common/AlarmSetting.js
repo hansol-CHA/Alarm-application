@@ -33,8 +33,8 @@ export default function AlarmSetting () {
 
   return (
     <div className='addAlarm'>
-      <p>알람등록</p>
-      <form>
+      <h3>알람등록</h3>
+      <form className="alarm-setting">
         <label className='lable'>시계모드:
           <select name="clockMode" value={clockMode} onChange={handleInputChange}>
             <option>일반</option>
@@ -50,8 +50,9 @@ export default function AlarmSetting () {
           </select>
         </label>
         <label className='lable'>내용: <input type="text" name='message' value={message} onChange={handleInputChange}/></label>
-        <button onClick={handleAlarmAdd}>내용 추가</button>
       </form>
+      <button className="button-addAlarm" onClick={handleAlarmAdd}>내용 추가</button>
+
     </div>
   )
 }
